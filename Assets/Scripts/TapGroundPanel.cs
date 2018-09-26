@@ -16,7 +16,9 @@ public class TapGroundPanel : MonoBehaviour {
 		if (stepPanel.gameObject.tag == "Player") {
 			//rb2D.velocity = new Vector2 (0, rb2D.velocity.y);
 			barierRigidbody.AddForce(Vector3.up * 100f);
-			Debug.Log("Alive!");
 		}
+	}
+	void OnTriggerExit2D(Collider2D stepPanel) {
+		barierRigidbody.AddForce(Vector3.down *100f);
 	}
 }
