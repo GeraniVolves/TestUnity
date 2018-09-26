@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
@@ -55,5 +56,10 @@ public class Player : MonoBehaviour {
 		skeletonAnimation.state.SetAnimation(0, name, loop);
 		currentAnimation = name;
 
+	}
+	void OnTriggerEnter2D(Collider2D other) {
+		if (other.gameObject.name == "barrier") {
+			SceneManager.LoadScene("GameOver");
+		}
 	}
 }
