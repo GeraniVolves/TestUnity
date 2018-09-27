@@ -19,6 +19,6 @@ public class TapGroundPanel : MonoBehaviour {
 		}
 	}
 	void OnTriggerExit2D(Collider2D stepPanel) {
-		barierRigidbody.AddForce(Vector3.down *100f);
+		barierRigidbody.AddForce(Vector3.down * 100f);
 	}
 }

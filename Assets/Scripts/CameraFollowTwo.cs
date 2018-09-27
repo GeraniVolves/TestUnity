@@ -15,6 +15,7 @@ public class CameraFollowTwo : MonoBehaviour {
 		if (targets.Count == 0) {
 			return;
 		}
+		
 		Vector3 centerPoint = GetCenterPoint();
 
 		Vector3 newPosition = centerPoint + offset;

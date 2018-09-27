@@ -32,20 +32,19 @@ public class Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		rb2D.velocity = new Vector2 (move * speed, rb2D.velocity.y);
-		if (Input.GetButtonDown (jumpKey) && isGrounded){
+		if (Input.GetButtonDown (jumpKey) && isGrounded) {
 			rb2D.AddForce (new Vector2(0, jumpPower));
 			isGrounded = false;
 		}
 		
 
 		if (move > 0) {
-			transform.localRotation = Quaternion.Euler(0,0,0);
+			transform.localRotation = Quaternion.Euler(0, 0, 0);
 			SetAnimation("Run", true);
 		}
 		else if (move < 0) {
-			transform.localRotation = Quaternion.Euler(0,180,0);
+			transform.localRotation = Quaternion.Euler(0, 180, 0);
 			SetAnimation("Run", true);
 		}
 		else {
@@ -54,7 +53,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void SetAnimation(string name, bool loop) {
-		if(name == currentAnimation) 
+		if (name == currentAnimation)
 			return;
 		
 		skeletonAnimation.state.SetAnimation(0, name, loop);

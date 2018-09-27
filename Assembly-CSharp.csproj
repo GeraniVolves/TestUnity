@@ -156,7 +156,6 @@
      <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\SkeletonUtilityBone.cs" />
      <Compile Include="Assets\Spine\spine-unity\SkeletonUtility\SkeletonUtilityConstraint.cs" />
      <Compile Include="Assets\Spine\spine-unity\SpineAttributes.cs" />
-     <Compile Include="Assets\TapGround.cs" />
      <None Include="Assets\Spine\spine-unity\Shaders\Utility\HiddenPass.shader" />
      <None Include="Assets\Spine\spine-unity\Modules\Shaders\Spine-Skeleton-Fill.shader" />
      <None Include="Assets\Spine\spine-unity\Modules\Shaders\Sprite\CGIncludes\SpritePixelLighting.cginc" />
