@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class Player : MonoBehaviour {
 
 		public float speed = 10f;
-		public float jumpPower = 600f;
+		public float jumpPower = 700f;
 		public Transform groundCheck;
 		public LayerMask ground;
 		public float groundRadius = 0.3f;
