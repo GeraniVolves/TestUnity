@@ -27,15 +27,17 @@ public class Player : MonoBehaviour {
 
 	void FixedUpdate () {
 		move = Input.GetAxis (horizontalAxisKey);
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+
 		rb2D.velocity = new Vector2 (move * speed, rb2D.velocity.y);
 		if (Input.GetButtonDown (jumpKey) && isGrounded){
 			rb2D.AddForce (new Vector2(0, jumpPower));
 			isGrounded = false;
 		}
-	}
-	
-	// Update is called once per frame
-	void Update () {
 		
 
 		if (move > 0) {
