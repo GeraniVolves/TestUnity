@@ -58,6 +58,7 @@
      <Compile Include="Assets\Scripts\GameOverScript.cs" />
      <Compile Include="Assets\Scripts\MainMenuScript.cs" />
      <Compile Include="Assets\Scripts\Player.cs" />
+     <Compile Include="Assets\Scripts\StepPanelAnimation.cs" />
      <Compile Include="Assets\Scripts\TapGroundPanel.cs" />
      <Compile Include="Assets\Spine\spine-csharp\Animation.cs" />
      <Compile Include="Assets\Spine\spine-csharp\AnimationState.cs" />

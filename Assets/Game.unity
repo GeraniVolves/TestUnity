@@ -834,8 +834,9 @@ GameObject:
   - component: {fileID: 706781676}
   - component: {fileID: 706781675}
   - component: {fileID: 706781679}
+  - component: {fileID: 706781680}
   m_Layer: 0
-  m_Name: Spine GameObject (skeleton)
+  m_Name: stepPanel
   m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -920,11 +921,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 706781674}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.958, y: -0.168, z: 0}
-  m_LocalScale: {x: 1.219372, y: 0.9548411, z: 1}
+  m_LocalPosition: {x: 13.94, y: 3.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1820916321}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &706781679
 BoxCollider2D:
@@ -951,6 +952,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7265054, y: 0.7889348}
   m_EdgeRadius: 0
+--- !u!114 &706781680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 706781674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33d4f5a04878d74d99dd95fc3b7f91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonAnimation: {fileID: 706781675}
 --- !u!1 &744934972
 GameObject:
   m_ObjectHideFlags: 0
@@ -1560,8 +1573,9 @@ GameObject:
   - component: {fileID: 1030037592}
   - component: {fileID: 1030037591}
   - component: {fileID: 1030037590}
+  - component: {fileID: 1030037594}
   m_Layer: 0
-  m_Name: Spine GameObject (skeleton)
+  m_Name: stepPanel
   m_TagString: Switch
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1574,11 +1588,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1030037588}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5, y: -0.2, z: 0}
-  m_LocalScale: {x: 1.09, y: 1, z: 1}
+  m_LocalPosition: {x: 23.94, y: 3.3, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1820916321}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1030037590
 BoxCollider2D:
@@ -1677,6 +1691,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1030037588}
   m_Mesh: {fileID: 0}
+--- !u!114 &1030037594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1030037588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e33d4f5a04878d74d99dd95fc3b7f91b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonAnimation: {fileID: 1030037591}
 --- !u!1 &1080717526
 GameObject:
   m_ObjectHideFlags: 0
@@ -2468,7 +2494,7 @@ GameObject:
   - component: {fileID: 1367676514}
   - component: {fileID: 1367676515}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: BarrierTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2481,7 +2507,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1367676512}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.51, y: 17.24, z: -10}
+  m_LocalPosition: {x: 18.51, y: 15.02, z: -10}
   m_LocalScale: {x: 1, y: 0.3999903, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3134,7 +3160,7 @@ GameObject:
   - component: {fileID: 1820916323}
   - component: {fileID: 1820916322}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: TapGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3174,9 +3200,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 18.94, y: 3.56, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 706781678}
-  - {fileID: 1030037589}
+  m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3193,9 +3217,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barierRigidbody: {fileID: 1367902312}
   barrierForce: 100
-  skeletonAnimation:
-  - {fileID: 706781675}
-  - {fileID: 1030037591}
 --- !u!61 &1820916323
 BoxCollider2D:
   m_ObjectHideFlags: 0
