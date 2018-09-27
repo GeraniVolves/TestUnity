@@ -18,4 +18,8 @@ public class StepPanelAnimation : MonoBehaviour {
 	void OnTriggerStay2D(Collider2D stepPanel) {
 		SetAnimation("Jump", true);
 	}
+
+	void OnTriggerExit2D(Collider2D stepPanel) {
+		SetAnimation("Idle", true);
+	}
 }
