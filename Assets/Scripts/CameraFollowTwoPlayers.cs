@@ -8,7 +8,6 @@ public class CameraFollowTwoPlayers : MonoBehaviour {
 	public Vector3 offset;
 	
 	void LateUpdate () {
-
 		if (targets.Count == 0) {
 			return;
 		}

@@ -34,7 +34,6 @@ public class Player : MonoBehaviour {
 			isGrounded = false;
 		}
 		
-
 		if (move > 0) {
 			transform.localRotation = Quaternion.Euler(0, 0, 0);
 			SetAnimation("Run", true);

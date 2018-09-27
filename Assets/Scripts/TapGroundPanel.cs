@@ -13,9 +13,7 @@ public class TapGroundPanel : MonoBehaviour {
 	}
 
 	void OnTriggerStay2D(Collider2D stepPanel) {
-		if (stepPanel.gameObject.tag == "Player") {
 			barierRigidbody.AddForce(Vector3.up * barrierForce);
-		}
 	}
 	void OnTriggerExit2D(Collider2D stepPanel) {
 		barierRigidbody.AddForce(Vector3.down * barrierForce);
