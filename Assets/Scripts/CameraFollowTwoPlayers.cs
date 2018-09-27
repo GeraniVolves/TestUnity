@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollowTwo : MonoBehaviour {
+public class CameraFollowTwoPlayers : MonoBehaviour {
 
-	// Use this for initialization
 	public List<Transform> targets;
-
 	public Vector3 offset;
 	
-	// Update is called once per frame
 	void LateUpdate () {
 
 		if (targets.Count == 0) {
@@ -17,14 +14,12 @@ public class CameraFollowTwo : MonoBehaviour {
 		}
 		
 		Vector3 centerPoint = GetCenterPoint();
-
 		Vector3 newPosition = centerPoint + offset;
-
 		transform.position = newPosition;
 	}
 
 	Vector3 GetCenterPoint() {
-		if(targets.Count == 1) {
+		if (targets.Count == 1) {
 			return targets[0].position;
 		}
 		var bounds = new Bounds(targets[0].position, Vector3.zero);
