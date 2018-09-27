@@ -6,15 +6,16 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-		public float speed2 = 10f;
-		public float jumpPower2 = 500f;
+		public float speed = 10f;
+		public float jumpPower = 600f;
 		public Transform groundCheck;
 		public LayerMask ground;
 		public float groundRadius = 0.3f;
-		public float move2;
+		public float move;
 		public string horizontalAxisKey;
 		public string jumpKey;
 		Rigidbody2D rb2D;
+		bool isGrounded = true;
 
 		public SkeletonAnimation skeletonAnimation;
 		string currentAnimation = "";
@@ -25,10 +26,11 @@ public class Player : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		move2 = Input.GetAxis (horizontalAxisKey);
-		rb2D.velocity = new Vector2 (move2 * speed2, rb2D.velocity.y);
-		if (Input.GetButtonDown (jumpKey)) {
-			rb2D.AddForce (new Vector2(0, jumpPower2));
+		move = Input.GetAxis (horizontalAxisKey);
+		rb2D.velocity = new Vector2 (move * speed, rb2D.velocity.y);
+		if (Input.GetButtonDown (jumpKey) && isGrounded){
+			rb2D.AddForce (new Vector2(0, jumpPower));
+			isGrounded = false;
 		}
 	}
 	
@@ -36,11 +38,11 @@ public class Player : MonoBehaviour {
 	void Update () {
 		
 
-		if (move2 > 0) {
+		if (move > 0) {
 			transform.localRotation = Quaternion.Euler(0,0,0);
 			SetAnimation("Run", true);
 		}
-		else if (move2 < 0) {
+		else if (move < 0) {
 			transform.localRotation = Quaternion.Euler(0,180,0);
 			SetAnimation("Run", true);
 		}
@@ -60,6 +62,12 @@ public class Player : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.name == "barrier") {
 			SceneManager.LoadScene("GameOver");
+		}
+	}
+
+	void OnCollisionEnter2D(Collision2D col) {
+		if (col.gameObject.tag == "Ground") {
+			isGrounded = true;
 		}
 	}
 }
