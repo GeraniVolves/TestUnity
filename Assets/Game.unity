@@ -366,14 +366,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14ee98d8c62bf1438d814c4ff4d45e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed2: 10
-  jumpPower2: 600
+  speed: 10
+  jumpPower: 700
   groundCheck: {fileID: 0}
   ground:
     serializedVersion: 2
     m_Bits: 0
   groundRadius: 0.3
-  move2: 0
+  move: 0
   horizontalAxisKey: Horizontal
   jumpKey: Jump
   skeletonAnimation: {fileID: 179321345}
@@ -788,7 +788,7 @@ Camera:
   far clip plane: 1000
   field of view: 31
   orthographic: 1
-  orthographic size: 7
+  orthographic size: 8
   m_Depth: 1
   m_CullingMask:
     serializedVersion: 2
@@ -1486,14 +1486,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c14ee98d8c62bf1438d814c4ff4d45e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed2: 10
-  jumpPower2: 700
+  speed: 10
+  jumpPower: 700
   groundCheck: {fileID: 0}
   ground:
     serializedVersion: 2
     m_Bits: 0
   groundRadius: 0.3
-  move2: 0
+  move: 0
   horizontalAxisKey: Horizontal2
   jumpKey: Jump2
   skeletonAnimation: {fileID: 1080717531}
@@ -1760,6 +1760,10 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1020051895589574, guid: 66cf1b8eb3bd620499bcd728250fdfff, type: 2}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66cf1b8eb3bd620499bcd728250fdfff, type: 2}
@@ -2304,6 +2308,10 @@ Prefab:
         type: 2}
       propertyPath: m_SortingOrder
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1908259078933540, guid: 04cef3705d91b334cbfa4dd777f8b31d, type: 2}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04cef3705d91b334cbfa4dd777f8b31d, type: 2}
