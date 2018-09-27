@@ -6,18 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 
-		public float speed = 10f;
-		public float jumpPower = 700f;
-		public Transform groundCheck;
-		public LayerMask ground;
-		public float groundRadius = 0.3f;
-		public float move;
-		public string horizontalAxisKey;
-		public string jumpKey;
-		public SkeletonAnimation skeletonAnimation;
-		Rigidbody2D rb2D;
-		bool isGrounded = true;
-		string currentAnimation = "";
+	public float speed = 10f;
+	public float jumpPower = 700f;
+	public Transform groundCheck;
+	public LayerMask ground;
+	public float groundRadius = 0.3f;
+	public float move;
+	public string horizontalAxisKey;
+	public string jumpKey;
+	public SkeletonAnimation skeletonAnimation;
+	Rigidbody2D rb2D;
+	bool isGrounded = true;
+	string currentAnimation = "";
 		
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D>();
