@@ -14,23 +14,19 @@ public class Player : MonoBehaviour {
 		public float move;
 		public string horizontalAxisKey;
 		public string jumpKey;
+		public SkeletonAnimation skeletonAnimation;
 		Rigidbody2D rb2D;
 		bool isGrounded = true;
-
-		public SkeletonAnimation skeletonAnimation;
 		string currentAnimation = "";
-
-	// Use this for initialization
+		
 	void Start () {
 		rb2D = GetComponent<Rigidbody2D>();
 	}
 
 	void FixedUpdate () {
-		move = Input.GetAxis (horizontalAxisKey);
-		
+		move = Input.GetAxis (horizontalAxisKey);	
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		rb2D.velocity = new Vector2 (move * speed, rb2D.velocity.y);
 		if (Input.GetButtonDown (jumpKey) && isGrounded) {
@@ -55,11 +51,10 @@ public class Player : MonoBehaviour {
 	void SetAnimation(string name, bool loop) {
 		if (name == currentAnimation)
 			return;
-		
 		skeletonAnimation.state.SetAnimation(0, name, loop);
 		currentAnimation = name;
-
 	}
+
 	void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.name == "barrier") {
 			SceneManager.LoadScene("GameOver");
