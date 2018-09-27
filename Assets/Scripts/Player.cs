@@ -8,9 +8,6 @@ public class Player : MonoBehaviour {
 
 	public float speed = 10f;
 	public float jumpPower = 700f;
-	public Transform groundCheck;
-	public LayerMask ground;
-	public float groundRadius = 0.3f;
 	public float move;
 	public string horizontalAxisKey;
 	public string jumpKey;
