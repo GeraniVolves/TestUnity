@@ -10,6 +10,11 @@ public class CameraFollowTwoPlayers : MonoBehaviour {
 	public float minZoom = 40f;
 	public float maxZoom = 10f;
 	public float zoomLimiter = 50f;
+	public bool border;
+	public float minX;
+	public float maxX;
+	public float minY;
+	public float maxY;
 	private Vector3 velocity;
 	private Camera cam;
 
@@ -23,7 +28,10 @@ public class CameraFollowTwoPlayers : MonoBehaviour {
 		}
 
 		Move();
-		Zoom();
+		//Zoom();
+		if (border == true) {
+			transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), Mathf.Clamp(transform.position.y, minY, maxY), transform.position.z);
+		}
 	}
 
 	void Zoom() {
