@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,36 +7,36 @@ public class CameraFollowTwoPlayers : MonoBehaviour {
 	public List<Transform> targets;
 	public Vector3 offset;
 	public float smoothTime = 0.5f;
-	public float minZoom = 40f;
-	public float maxZoom = 10f;
-	public float zoomLimiter = 50f;
-	public bool border;
+	public bool border = true;
 	public float minX;
 	public float maxX;
 	public float minY;
 	public float maxY;
+	public float MaxDistance;
 	private Vector3 velocity;
 	private Camera cam;
 
 	void Start() {
 		cam = GetComponent<Camera>();
+		MaxDistance = cam.orthographicSize*2.4f;
 	}
 	
+	void Update() {
+		var distance = Vector3.Distance(targets[0].transform.position, targets[1].transform.position);
+		if (distance > MaxDistance) {
+			targets[0].position = targets[1].position + (targets[0].position - targets[1].position).normalized * MaxDistance;
+			targets[1].position = targets[0].position + (targets[1].position - targets[0].position).normalized * MaxDistance;
+		}
+	}
+
 	void LateUpdate () {
 		if (targets.Count == 0) {
 			return;
 		}
-
 		Move();
-		//Zoom();
 		if (border == true) {
 			transform.position = new Vector3(Mathf.Clamp(transform.position.x, minX, maxX), Mathf.Clamp(transform.position.y, minY, maxY), transform.position.z);
 		}
-	}
-
-	void Zoom() {
-		float newZoom = Mathf.Lerp(maxZoom, minZoom, GetGreatestDistance()/ zoomLimiter);
-		cam.fieldOfView = Mathf.Lerp(cam.fieldOfView, newZoom, Time.deltaTime);
 	}
 
 	void Move() {
