@@ -28,6 +28,7 @@ public class Player : MonoBehaviour {
 		rb2D.velocity = new Vector2 (move * speed, rb2D.velocity.y);
 		if (Input.GetButtonDown (jumpKey) && isGrounded) {
 			rb2D.AddForce (new Vector2(0, jumpPower));
+			skeletonAnimation.state.SetAnimation(0, "_jump", false);
 			isGrounded = false;
 		}
 		
